@@ -9,7 +9,7 @@ const UserCard = ({ user, click }) => {
 		<article className='user-card flex column justify-center align-center'>
 			<img className='card-image' src={user.avatar} alt={user.name} />
 			<div className='card-details'>
-				<p className='user-name'>{user.name}</p>
+				<p className='user-name'>{user.name.toUpperCase()}</p>
 			</div>
 			<div className='card-buttons flex justify-between'>
 				<IconButton
@@ -20,6 +20,7 @@ const UserCard = ({ user, click }) => {
 					<DeleteIcon
 						sx={{
 							color: 'red',
+							fontSize: { md: '1.75rem' },
 						}}
 					/>
 				</IconButton>
@@ -32,6 +33,7 @@ const UserCard = ({ user, click }) => {
 					<EditIcon
 						sx={{
 							color: 'green',
+							fontSize: { md: '1.75rem' },
 						}}
 					/>
 				</IconButton>

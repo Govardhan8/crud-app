@@ -11,6 +11,7 @@ const Profile = () => {
 	const { id } = useParams()
 	const history = useHistory()
 	const [profileData, setProfileData] = useState(null)
+	//To get profile data from api
 	const getProfile = async () => {
 		const userData = await axios.get(
 			`https://6166c4e213aa1d00170a670e.mockapi.io/profile/${id}/`

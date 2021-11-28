@@ -1,4 +1,5 @@
 /* Utility classes */
+
 /* Flexbox properties */
 .flex {
 	display: flex;
@@ -24,6 +25,7 @@
 .column {
 	flex-direction: column;
 }
+
 /* Grid properties */
 .grid {
 	display: grid;

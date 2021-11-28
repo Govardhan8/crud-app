@@ -10,19 +10,19 @@ const EditProfile = () => {
 	const { id } = useParams()
 	const history = useHistory()
 	const [available, setAvailable] = useState(false)
-
+	//To save profile data after submitting the form
 	const saveUser = (profile) => {
 		axios
 			.put(`https://6166c4e213aa1d00170a670e.mockapi.io/profile/${id}`, profile)
 			.then(() => history.push('/profile/1'))
 	}
-
+	//Validations for the form
 	const validations = Yup.object().shape({
 		firstname: Yup.string().trim().required('firstname is Required'),
 		lastname: Yup.string().trim().required('lastname is Required'),
 		avatar: Yup.string()
 			.trim()
-			.min(15, 'Please enter atleast 20 characters for image url')
+			.min(15, 'Please enter atleast 15 characters for image url')
 			.required('image url required'),
 		city: Yup.string().trim().required('city is Required'),
 		email: Yup.string()
@@ -30,7 +30,7 @@ const EditProfile = () => {
 			.email('Invalid email format')
 			.required('Email is Required'),
 	})
-
+	//Formik object for the form
 	const { values, handleSubmit, handleChange, handleBlur, errors, touched } =
 		useFormik({
 			initialValues: {
@@ -45,8 +45,8 @@ const EditProfile = () => {
 				saveUser(values)
 			},
 		})
-
-	const getUser = async () => {
+	//To get profile details initially
+	const getProfile = async () => {
 		const userData = await axios.get(
 			`https://6166c4e213aa1d00170a670e.mockapi.io/profile/${id}/`
 		)
@@ -61,7 +61,7 @@ const EditProfile = () => {
 		}
 	}
 	useEffect(() => {
-		getUser()
+		getProfile()
 		// eslint-disable-next-line
 	}, [])
 

@@ -10,13 +10,13 @@ const EditUser = () => {
 	const { id } = useParams()
 	const history = useHistory()
 	const [available, setAvailable] = useState(false)
-
+	//To save user data when submitting the form
 	const saveUser = (user) => {
 		axios
 			.put(`https://6166c4e213aa1d00170a670e.mockapi.io/users/${id}`, user)
-			.then(() => history.push('/'))
+			.then(() => history.push('/users'))
 	}
-
+	//Validations for the form
 	const validations = Yup.object().shape({
 		name: Yup.string().trim().required('Name is Required'),
 		avatar: Yup.string()
@@ -24,7 +24,7 @@ const EditUser = () => {
 			.min(15, 'Please enter atleast 20 characters for image url')
 			.required('image url required'),
 	})
-
+	//Formik object for the form
 	const { values, handleSubmit, handleChange, handleBlur, errors, touched } =
 		useFormik({
 			initialValues: {
@@ -36,12 +36,13 @@ const EditUser = () => {
 				saveUser(values)
 			},
 		})
-
+	//To get user data when initially in the form
 	const getUser = async () => {
 		const userData = await axios.get(
 			`https://6166c4e213aa1d00170a670e.mockapi.io/users/${id}/`
 		)
 		if (userData) {
+			//Setting the form values when data is retrieved from api
 			values.name = userData.data.name
 			values.avatar = userData.data.avatar
 			setAvailable(true)
@@ -56,6 +57,7 @@ const EditUser = () => {
 		<>
 			<main className=' main flex column align-center'>
 				<h2>Edit User</h2>
+				{/* Form is rendered only when form data is available until then we have a spinner gif */}
 				{available ? (
 					<form onSubmit={handleSubmit} className='form'>
 						<TextField

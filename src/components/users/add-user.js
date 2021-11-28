@@ -7,12 +7,13 @@ import axios from 'axios'
 
 const AddUser = () => {
 	const history = useHistory()
+	//To add user data after submitting the form
 	const addUser = (user) => {
 		axios
 			.post(`https://6166c4e213aa1d00170a670e.mockapi.io/users/`, user)
-			.then(() => history.push('/'))
+			.then(() => history.push('/users'))
 	}
-
+	//Validations for the form
 	const validations = Yup.object().shape({
 		name: Yup.string().trim().required('Name is Required'),
 		avatar: Yup.string()
@@ -20,7 +21,7 @@ const AddUser = () => {
 			.min(15, 'Please enter atleast 20 characters image url')
 			.required('image url required'),
 	})
-
+	//Formik object for the form
 	const { values, handleSubmit, handleChange, handleBlur, errors, touched } =
 		useFormik({
 			initialValues: {

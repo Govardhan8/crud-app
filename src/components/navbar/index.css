@@ -2,10 +2,40 @@
 	width: 100%;
 	height: 3rem;
 	background-color: rgb(19, 199, 184);
+	padding: 0 1rem;
 }
 .profile-image {
 	height: 2rem;
 	aspect-ratio: 1;
 	object-fit: cover;
 	border-radius: 50%;
+}
+.navbar span {
+	display: none;
+}
+@media (min-width: 1200px) {
+	.navbar span {
+		display: block;
+		font-size: 1.25rem;
+		padding-left: 0.5rem;
+		justify-content: center;
+		color: whitesmoke;
+		position: relative;
+	}
+	.navbar a:focus-visible,
+	.navbar a:hover,
+	.navbar a:focus {
+		text-decoration: none;
+	}
+	.profile-image {
+		margin-right: 0.5rem;
+	}
+	.profile-icon::before {
+		position: absolute;
+		content: '';
+		height: 100%;
+		width: 2.5px;
+		left: 0;
+		background-color: rgb(95, 95, 95);
+	}
 }
