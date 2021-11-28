@@ -1,0 +1,11 @@
+.navbar {
+	width: 100%;
+	height: 3rem;
+	background-color: rgb(19, 199, 184);
+}
+.profile-image {
+	height: 2rem;
+	aspect-ratio: 1;
+	object-fit: cover;
+	border-radius: 50%;
+}

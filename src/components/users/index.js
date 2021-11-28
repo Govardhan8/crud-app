@@ -1,7 +1,5 @@
 import './index.css'
+import AddUser from './add-user'
+import EditUser from './edit-user'
 
-const index = () => {
-	return <div>navbar</div>
-}
-
-export default index
+export { AddUser, EditUser }
