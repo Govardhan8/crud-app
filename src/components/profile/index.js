@@ -1,7 +1,5 @@
 import './index.css'
+import Profile from './profile'
+import EditProfile from './edit-profile'
 
-const Index = () => {
-	return <div>Profile page</div>
-}
-
-export default Index
+export { EditProfile, Profile }

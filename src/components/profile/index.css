@@ -1,0 +1,27 @@
+.profile-page-image {
+	width: 100%;
+	aspect-ratio: 2/1;
+}
+.para {
+	width: 100%;
+	max-width: 800px;
+	align-self: center;
+	padding: 0.75rem 1rem;
+}
+.para svg {
+	color: lightgray;
+}
+.para span {
+	color: rgb(117, 115, 115);
+	padding-left: 1rem;
+	letter-spacing: 1.5px;
+}
+.edit-button {
+	width: 80%;
+	max-width: 700px;
+	align-self: center;
+}
+.edit-button span {
+	font-size: 1rem;
+	padding-left: 1rem;
+}

@@ -4,6 +4,7 @@ import Navbar from './components/navbar'
 import Footer from './components/footer'
 import Dashboard from './components/dashboard'
 import { AddUser, EditUser } from './components/users'
+import { EditProfile, Profile } from './components/profile'
 
 function App() {
 	return (
@@ -19,6 +20,12 @@ function App() {
 					</Route>
 					<Route exact path='/edit-user/:id'>
 						<EditUser />
+					</Route>
+					<Route exact path='/edit-profile/:id'>
+						<EditProfile />
+					</Route>
+					<Route exact path='/profile/:id'>
+						<Profile />
 					</Route>
 				</Switch>
 				<Footer />

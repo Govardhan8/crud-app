@@ -48,7 +48,7 @@ const Index = () => {
 				</IconButton>
 			</Link>
 			{image && (
-				<Link to='/'>
+				<Link to='/profile/1'>
 					<IconButton>
 						<img className='profile-image' src={image} alt='profile pic' />
 					</IconButton>
